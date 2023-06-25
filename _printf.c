@@ -40,8 +40,7 @@ int _printf(const char *format, ...)
 					break;
 			}
 		}
-		else
-		{
+		else{
 			_putchar(format[index]);
 			num_char++;
 		}
