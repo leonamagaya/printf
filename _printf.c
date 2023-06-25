@@ -18,6 +18,8 @@ int _printf(const char *format, ...)
 		if (format[index] == '%')
 		{
 			index++;
+			if (*format == '\0')
+				break;
 			if (format[index] == 'c')
 			{
 				c = va_arg(args, int);
