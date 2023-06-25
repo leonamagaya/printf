@@ -28,10 +28,11 @@ int _printf(const char *format, ...)
 			}
 			else if (format[index] == 's')
 			{
-				for (s = va_arg(args, char *); *s; s++)
+				while (*s != '\0')
 				{
-					_putchar(*s);
+					_putchar(va_arg(args, char *));
 					num_char++;
+					s++;
 				}
 			}
 			else if (format[index] == '%')
