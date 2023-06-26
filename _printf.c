@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
-#include <unistd.h>
 /**
  * _printf -  function that produces output according
  *            to a format.
@@ -27,7 +25,10 @@ int _printf(const char *format, ...)
 			}
 			else if (format[index] == 's')
 			{
-				for (s = va_arg(args, char *); *s; s++)
+				s = va_arg(args, char *);
+				if (s == NULL)
+					s = "(null)";
+				for (; *s; s++)
 				{
 					_putchar(*s);
 					num_char++;
