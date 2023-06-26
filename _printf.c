@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			_putchar(format[index + 1]);
+			_putchar(format[index]);
 			num_char++;
 		}
 	}
