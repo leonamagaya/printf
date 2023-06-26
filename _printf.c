@@ -38,25 +38,16 @@ int _printf(const char *format, ...)
 			}
 			else if (format[index] == '%')
 			{
-				percentage();
+				_putchar('%');
 				num_char++;
 			}
 		}
 		else
 		{
-			_putchar(format[index]);
+			_putchar(format[index + 1]);
 			num_char++;
 		}
 	}
 	va_end(args);
 	return (num_char);
-	}
-/**
- * percentage - helper for handling %.
- *
- * Return: %
- */
-int percentage()
-{
-	return (write(1,"%%", 1));
 }
