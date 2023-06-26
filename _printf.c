@@ -1,11 +1,14 @@
 #include "main.h"
 #include <stdarg.h>
+#include <unistd.h>
 /**
  * _printf -  function that produces output according
  *            to a format.
  * @format: input string.
  * Return: number of characters.
  */
+int percentage();
+
 int _printf(const char *format, ...)
 {
 	va_list args;
@@ -18,8 +21,6 @@ int _printf(const char *format, ...)
 		if (format[index] == '%')
 		{
 			index++;
-			if (format[index] == '\0')
-				break;
 			if (format[index] == 'c')
 			{
 				c = va_arg(args, int);
@@ -28,16 +29,16 @@ int _printf(const char *format, ...)
 			}
 			else if (format[index] == 's')
 			{
-				while (*s != '\0')
+				for (s = va_arg(args, char *); *s; s++)
 				{
-					_putchar(va_arg(args, char *));
+					_putchar(*s);
 					num_char++;
-					s++;
 				}
+
 			}
 			else if (format[index] == '%')
 			{
-				_putchar('%');
+				percentage();
 				num_char++;
 			}
 		}
@@ -50,3 +51,12 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (num_char);
 	}
+/**
+ * percentage - helper for handling %.
+ *
+ * Return: %
+ */
+int percentage()
+{
+	return (write(1,"%%", 1));
+}
