@@ -11,6 +11,9 @@ int _printf(const char *format, ...)
 	int num_char = 0, index, c;
 	char *s;
 
+	if (format == NULL)
+		return (-1);
+
 	va_start(args, format);
 	for (index = 0; format[index] != '\0'; index++)
 	{
