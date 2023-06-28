@@ -49,7 +49,11 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	for (index = 0; format[index] != '\0'; index++)
 	{
-		if (format[index] == '%')
+		if (format[index] == '%' && format[index + 1] == '\0')
+		{
+			num_char += print_character('%');
+		}
+		else if (format[index] == '%')
 		{
 			index++;
 			if (format[index] == 'c')
@@ -69,14 +73,9 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				_putchar('%');
-				if (format[index + 1] != '\0')
-				{
+					_putchar('%');
 					_putchar(format[index]);
 					num_char += 2;
-				}
-				else
-					num_char += 1;
 			}
 		}
 		else
