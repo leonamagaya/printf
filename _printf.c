@@ -7,6 +7,7 @@
  */
 int print_character(char c)
 {
+
 	_putchar(c);
 	return (1);
 }
@@ -69,8 +70,13 @@ int _printf(const char *format, ...)
 			else
 			{
 				_putchar('%');
-				_putchar(format[index]);
-				num_char += 2;
+				if (format[index] != '\0')
+				{
+					_putchar(format[index]);
+					num_char += 2;
+				}
+				else
+					num_char += 1;
 			}
 		}
 		else
