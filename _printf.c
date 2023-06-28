@@ -70,7 +70,7 @@ int _printf(const char *format, ...)
 			else
 			{
 				_putchar('%');
-				if (format[index] != '\0')
+				if (format[index + 1] != '\0')
 				{
 					_putchar(format[index]);
 					num_char += 2;
