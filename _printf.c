@@ -51,7 +51,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[index] == '%' && format[index + 1] == '\0')
 		{
-			num_char += print_character('%');
+			return (-1);
 		}
 		else if (format[index] == '%')
 		{
