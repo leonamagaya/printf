@@ -49,3 +49,35 @@ int not_specifier(const char *format, int index)
 	return (num_char);
 }
 
+/**
+ * print_integer - Prints and integer.
+ * @n: The integer to print.
+ * Return: the number of integers printed.
+ */
+int print_integer(int n)
+{
+	int rev_int = 0;
+	int num_char = 0;
+
+
+	if (n < 0)
+	{
+		_putchar('-');
+		n = n * -1;
+	}
+
+	while (n != 0)
+	{
+		rev_int = rev_int * 10 + n % 10;
+		n /= 10;
+	}
+
+	while (rev_int != 0)
+	{
+		_putchar('0' + rev_int % 10);
+		rev_int /= 10;
+		num_char += 1;
+	}
+	return (num_char);
+}
+

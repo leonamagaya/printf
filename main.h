@@ -9,5 +9,6 @@ int _printf(const char *format, ...);
 int print_character(char c);
 int print_string(char *s);
 int not_specifier(const char *format, int index);
+int print_integer(int n);
 
 #endif

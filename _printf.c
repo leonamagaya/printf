@@ -36,7 +36,14 @@ int _printf(const char *format, ...)
 				num_char += print_string(s);
 			}
 			else if (format[index] == '%')
+			{
 				num_char += print_character('%');
+			}
+			else if (format[index] == 'i' || format[index] == 'd')
+			{
+				int num = va_arg(args, int);
+				num_char += print_integer(num);
+			}
 			else
 			{
 				num_char += not_specifier(format, index);
