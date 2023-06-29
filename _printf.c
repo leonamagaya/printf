@@ -1,31 +1,11 @@
 #include "main.h"
 
 /**
- * print_string - Prints a string.
- * @s: The string to print.
- * Return: The number of characters printed.
- */
-int print_string(char *s)
-{
-	int count = 0;
-
-	if (s == NULL)
-		s = "(null)";
-
-	while (*s)
-	{
-		_putchar(*s);
-		count++;
-		s++;
-	}
-	return (count);
-}
-
-/**
  * _printf - Prints output according to a format.
  * @format: Input format string.
  * Return: Number of characters printed.
  */
+
 int _printf(const char *format, ...)
 {
 	va_list args;
