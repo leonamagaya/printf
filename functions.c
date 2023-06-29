@@ -71,13 +71,13 @@ int print_integer(int n)
 	{
 		rev_int = rev_int * 10 + n % 10;
 		n /= 10;
+		num_char += 1;
 	}
 
 	while (rev_int != 0)
 	{
 		_putchar('0' + rev_int % 10);
 		rev_int /= 10;
-		num_char += 1;
 	}
 	return (num_char);
 }
