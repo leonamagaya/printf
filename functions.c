@@ -5,12 +5,10 @@
  * @c: The character to print.
  * Return: The number of characters printed.
  */
-
 int print_character(char c)
 {
-
-        _putchar(c);
-        return (1);
+	_putchar(c);
+	return (1);
 }
 
 /**
@@ -18,21 +16,20 @@ int print_character(char c)
  * @s: The string to print.
  * Return: The number of characters printed.
  */
-
 int print_string(char *s)
 {
-        int count = 0;
+	int count = 0;
 
-        if (s == NULL)
-                s = "(null)";
+	if (s == NULL)
+		s = "(null)";
 
-        while (*s)
-        {
-                _putchar(*s);
-                count++;
-                s++;
-        }
-        return (count);
+	while (*s)
+	{
+		_putchar(*s);
+		count++;
+		s++;
+	}
+	return (count);
 }
 
 /**
@@ -45,6 +42,7 @@ int print_string(char *s)
 int not_specifier(const char *format, int index)
 {
 	int num_char = 0;
+
 	_putchar('%');
 	_putchar(format[index]);
 	num_char += 2;
