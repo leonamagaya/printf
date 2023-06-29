@@ -63,6 +63,7 @@ int print_integer(int n)
 	if (n < 0)
 	{
 		_putchar('-');
+		num_char += 1;
 		n = n * -1;
 	}
 
