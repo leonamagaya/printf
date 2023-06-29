@@ -1,18 +1,6 @@
 #include "main.h"
 
 /**
- * print_character - Prints a single character.
- * @c: The character to print.
- * Return: The number of characters printed.
- */
-int print_character(char c)
-{
-
-	_putchar(c);
-	return (1);
-}
-
-/**
  * print_string - Prints a string.
  * @s: The string to print.
  * Return: The number of characters printed.
