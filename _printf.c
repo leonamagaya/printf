@@ -36,14 +36,10 @@ int _printf(const char *format, ...)
 				num_char += print_string(s);
 			}
 			else if (format[index] == '%')
-			{
 				num_char += print_character('%');
-			}
 			else
 			{
-					_putchar('%');
-					_putchar(format[index]);
-					num_char += 2;
+				num_char += not_specifier(format, index);
 			}
 		}
 		else
